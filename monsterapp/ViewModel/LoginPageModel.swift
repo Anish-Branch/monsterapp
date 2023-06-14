@@ -84,6 +84,9 @@ class LoginPageModel: ObservableObject {
         }
     }
 
+    func loginAsGuest() {
+        log_Status = true
+    }
     func ForgotPassword(){
         // Do Action Here...
     }

@@ -51,7 +51,8 @@ struct OnBoardingPage: View {
             Spacer()
             Button("Continue as guest") {
                 //Show the main pge here.
-                viewModel.selectionType = .guest
+                //viewModel.selectionType = .guest
+                LoginPageModel().loginAsGuest()
             }
             .fontWeight(.bold)
             .foregroundColor(Constants.Colors.themeBlue)
@@ -59,8 +60,9 @@ struct OnBoardingPage: View {
         .background(Constants.Colors.appBackground)
         .fullScreenCover(item: $viewModel.selectionType) { selectionType in
             switch selectionType {
-            case .guest:
-                MainPage()
+//            case .guest:
+//                //Not used anymore and can be safely removed
+//                MainPage()
             default:
                 LoginPage(loginData: LoginPageModel(registerUser: selectionType == .register ? true : false))
             }
